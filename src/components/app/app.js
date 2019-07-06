@@ -10,7 +10,8 @@ import "./app.css";
 export default class App extends Component {
   state = {
     selectedPerson: 69,
-    listPeople: [69, 346, 620, 644, 149] 
+    listPeople: [69, 346, 620, 644, 149],
+    random: false
   };
   onePersonSelected = id => {
     this.setState({
@@ -19,7 +20,9 @@ export default class App extends Component {
   };
 
   randomHeroes() {
-    
+    this.setState({
+      random: true
+    })
   }
 
   render() {
@@ -27,18 +30,6 @@ export default class App extends Component {
       <div>
         <Header />
         <UnderHeader />
-        <button
-          className="top-heroes btn btn-danger btn-lg"
-          onClick={this.topHeroes}
-        >
-          Top - 5
-        </button>
-        <button
-          className="random-heroes btn btn-danger btn-lg"
-          onClick={this.randomHeroes}
-        >
-          Random Heroes
-        </button>
         <div className="row mb2">
           <div className="col-md-6">
             <ListHeroes onHeroSelected={this.onePersonSelected} />
