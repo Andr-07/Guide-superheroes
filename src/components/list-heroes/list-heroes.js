@@ -13,24 +13,8 @@ export default class ListHeroes extends Component {
     swapiService = new SwapiService();
     
     state = {
-        arrNames:[],
-        arrImg:[]
+        arrNames:[]
     };
-
-//    componentDidMount() {
-//         this.swapiService
-//         .getRandomPeople()
-//         .then((people)=>{
-//             this.setState({
-//                 arrNames:[...people]
-//             })
-//         })
-//         .then(this.renderPeople())
-//         .getPerson(this.state.arrNames.foreach((el)=>{el}))
-//         .then((people)=>{
-//             console.log(people)
-//         })
-//     }
 
 async componentDidMount() {
     for (let i = 0; i < 5; i++) {
@@ -41,31 +25,22 @@ async componentDidMount() {
         const json = await res.json();
         console.log(json)
         this.setState({
-            arrNames: [...this.state.arrNames,json.name],
-            arrImg: [...this.state.arrImg,json.image]
+            arrNames: [...this.state.arrNames,json]
         }) 
     }
 }
 
-    
-    
-    
     render() {
       return (
+          <div>
             <div class="item-list list-group">
-            {/* <div class="row">
-    <div class="col"> */}
         {this.state.arrNames.map((el,i)=>{
-            return <ul class="list-group-item" id={i}>{el}</ul>
+            return <ul class="list-group-item" id={i}
+             onClick={()=>this.props.onHeroSelected(el.id)}>{el.name}</ul>
         })}
-    {/* </div>
-    <div class="col">
-    {this.state.arrImg.map((el,i)=>{
-            return <ul><img class="smallPic" src={`${el.url}`}></img></ul>
-        })}
-    </div>
-  </div> */}
   </div>
+  </div>
+
 
       );
   }
