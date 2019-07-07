@@ -1,4 +1,4 @@
-<b>SuperHeroes</b> - an app to search for information on superheroes of various comics
+<b>Guide superheroes</b> - an app to search for information on superheroes of various comics
 
 <b><h3>About:</h3><hr></hr></b>
 <img src="https://pp.userapi.com/c855020/v855020741/8d5e9/1HyYPBiR1Wk.jpg"></img>
