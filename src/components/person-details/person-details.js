@@ -23,22 +23,24 @@ export default class PersonDetails extends Component {
     }
   }
 
+  onHeroesLoaded = (person) => {
+    this.setState({ 
+      person,
+      loading: false
+     });
+  }
+
   updatePerson() {
     const { personId } = this.props;
     if (!personId) {
       return;
     }
-    this.swapiService.getPerson(personId).then(person => {
-      this.setState({ 
-        person,
-        loading: false
-       });
-    });
+    this.swapiService.getPerson(personId)
+    .then(this.onHeroesLoaded)
   }
 
   render() {
     console.log('>>>>',this.state.person)
-
     if (!this.state.person) {
       return <span> Select a person from a list</span>;
     }

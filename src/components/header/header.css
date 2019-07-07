@@ -9,6 +9,7 @@
     margin: 0;
     padding: .5rem 1rem;
     border-radius: 3px;
+    padding-top: 15%;
   }
   
   .header ul li:hover {
@@ -19,11 +20,25 @@
     text-decoration: none;
   }
   
-  .header h3 a {
-    color: white;
+  @import url(https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic);
+
+  .gradient-text a {
+    font-family: 'Rubik One', sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, rgb(226, 34, 34) 33%, rgb(255, 166, 166) 40%, rgb(7, 87, 206));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #0B2349;
+    display: table;
   }
   
-  .header h3 a:hover {
-    color: #00bc8c;
+  .gradient-text a:hover {
+    background: linear-gradient(45deg, rgb(0, 23, 235) 33%, rgb(155, 178, 255) 40%, rgb(255, 13, 13));
+    color: #0B2349;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
   }
+
 

@@ -15,6 +15,7 @@ export default class ListHeroes extends Component {
   state = {
     arrNames: [],
     topHeroes: [69, 346, 620, 644, 149],
+    loading: true
   };
 
   async componentDidMount() {
@@ -33,7 +34,9 @@ export default class ListHeroes extends Component {
       }
     }
     this.setState({
-      arrNames: arrTop
+      arrNames: arrTop,
+      loading: false
+
     });
   };
 
@@ -70,7 +73,7 @@ export default class ListHeroes extends Component {
         >
           Random Heroes
         </button>
-        {this.state.arrNames ?
+        {!this.state.loading ?
         <div class="item-list list-group">
           {this.state.arrNames.map((el, i) => {
             return (
@@ -83,7 +86,11 @@ export default class ListHeroes extends Component {
               </ul>
             );
           })}
-        </div> : 'gggg'}
+        </div> : 
+        <div class="item-list list-group">
+        <Spinner />
+        </div>
+        }
       </div>
     );
   }
