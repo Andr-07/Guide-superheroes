@@ -1,8 +1,9 @@
 
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import History from "../history";
+import Information from "../information";
 import Main from "../main";
+import PagePerson from "../page-person";
 
 import './app.css';
 import AllHeroes from '../all-heroes';
@@ -21,7 +22,7 @@ export default class App extends Component {
       </p>
       <ul className="d-flex">
         <li>
-      <Link className="item" to="/history">HISTORY</Link>
+      <Link className="item" to="/information">INFORMATION</Link>
         </li>
         <li>
       <Link className="item" to="/all">ALL HEROES</Link>
@@ -30,8 +31,9 @@ export default class App extends Component {
     </div>
     <Switch>     
                 <Route exact path="/" render={() => < Main />} />
-                <Route exact path="/history" render={() => < History/>} />
+                <Route exact path="/information" render={() => < Information/>} />
                 <Route exact path="/all" render={() => < AllHeroes/>} />
+                <Route exact path="/hero/:id" render={(props) => <PagePerson {...props}/>} />
               </Switch>
     </Router>
     

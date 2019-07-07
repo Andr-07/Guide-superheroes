@@ -24,4 +24,8 @@ export default class SwapiService {
         const person = await this.getResource(`${id}/`);
         return person;
       }
+     async getPersonByName(name){
+      const person = await this.getResource(`/search/${name}/`);
+      return person;
+    }
     }

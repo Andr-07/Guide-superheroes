@@ -14,7 +14,7 @@ export default class ListHeroes extends Component {
 
   state = {
     arrNames: [],
-    topHeroes: [69, 346, 620, 644, 149],
+    topHeroes: [70, 346, 620, 644, 149],
     loading: true
   };
 

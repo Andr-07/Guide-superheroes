@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SwapiService from "../../services/swapi-service";
 import Spinner from "../spinner";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 import "./person-details.css";
 
@@ -44,7 +45,7 @@ export default class PersonDetails extends Component {
     if (!this.state.person) {
       return <span> Select a person from a list</span>;
     }
-     const { name, image:{ url }, appearance: {gender}, biography:
+     const { id, name, image:{ url }, appearance: {gender}, biography:
       {publisher, alignment} } = this.state.person;
     if (this.state.loading){
       return <div className="person-details card">
@@ -81,6 +82,9 @@ export default class PersonDetails extends Component {
               <span>{this.state.person.biography['first-appearance']}</span>
             </li>
           </ul>
+          <p></p>
+          <Link className="item" to={`/hero/${id}`}>More information...</Link>
+
         </div>
       </div>
     );

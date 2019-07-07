@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-export default class History extends Component {
+export default class Information extends Component {
     render() {
         return (
           <div className="jumbotron-heroes jumbotron rounded">
           <div class="container-heroes">
-          HISTORY
+          <h3>Get all SuperHeroes and Villians data from all universes.</h3>
           </div>
           </div>
         );

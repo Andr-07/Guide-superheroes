@@ -9,8 +9,8 @@ import "./main.css";
 
 export default class Main extends Component {
   state = {
-    selectedPerson: 69,
-    listPeople: [69, 346, 620, 644, 149],
+    selectedPerson: 70,
+    listPeople: [70, 346, 620, 644, 149],
     random: false
   };
   onePersonSelected = id => {
